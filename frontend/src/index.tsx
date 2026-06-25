@@ -1,0 +1,26 @@
+// index.tsx
+// frontend entry point
+
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import './index.scss'
+
+import Home from './pages/Home'
+
+import NavBar from './components/NavBar'
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <BrowserRouter>
+      <NavBar />
+      <div className="site-main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
+
+    </BrowserRouter>
+  </StrictMode>,
+)

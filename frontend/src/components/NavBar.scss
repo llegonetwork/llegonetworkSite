@@ -1,0 +1,352 @@
+// NavBar.scss
+// css for NavBar.tsx
+
+@use '../index.scss' as *;
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: $space-md;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: $navbar-height;
+    padding: $space-sm;
+
+    background-color: $bg-color-secondary;
+    border-bottom: 2px solid $border-color-primary;
+
+    z-index: $z4;
+
+    .navbar-left, .navbar-right {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        gap: $space-md;
+
+        padding-inline: $space-sm;
+    }
+
+    .navbar-brand {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+
+        gap: $space-xs;
+
+        img {
+            width: 32px;
+            height: 32px;
+            border-radius: $radius-sm;
+
+            transition: transform 0.2s ease;
+        }
+
+        font-size: $font-lg;
+        color: $accent-color-primary;
+        font-weight: $weight-bold;
+
+        small {
+            font-size: $font-md;
+            color: $font-color-secondary;
+            font-weight: $weight-bold;
+        }
+
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $accent-color-hover;
+
+            img {
+                transform: scale(1.08);
+            }
+        }
+    }
+
+    .navbar-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        gap: $space-xl;
+
+        padding-left: $space-lg;
+
+        a {
+            position: relative;
+
+            color: $font-color-secondary;
+            font-size: $font-lg;
+            font-weight: $weight-semibold;
+
+            transition: color 0.2s ease;
+
+            &::after {
+                content: '';
+                position: absolute;
+
+                left: 50%;
+                bottom: 0px;
+                transform: translateX(-50%);
+
+                width: 0;
+                height: 2px;
+                border-radius: $radius-lg;
+
+                background-color: $accent-color-primary;
+
+                transition: width 0.2s ease, background-color 0.2s ease;
+            }
+
+            &:hover {
+                color: $accent-color-hover;
+
+                &::after {
+                    width: 100%;
+                    background-color: $accent-color-hover;
+                }
+            }
+
+            &.active {
+                color: $accent-color-active;
+
+                &::after {
+                    width: 100%;
+                    background-color: $accent-color-active;
+                }
+            }
+        }
+    }
+
+    .navbar-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        gap: $space-sm;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 2.5rem;
+            height: 2.5rem;
+
+            background-color: $bg-color-secondary;
+            color: $font-color-primary;
+            font-size: $font-md;
+
+            border: 2px solid $border-color-primary;
+            border-radius: $radius-md;
+
+            transition: background-color 0.15s ease, border-color 0.15s ease;
+
+            &:hover  { background-color: $bg-color-hover; border-color: $border-color-hover; }
+        }
+    }
+}
+
+.hamburger {
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    z-index: $z5;
+
+    span {
+        display: block;
+
+        width: 1.5rem;
+        height: 2px;
+
+        background-color: $font-color-primary;
+        border-radius: $radius-lg;
+
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    &.open {
+        span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        span:nth-child(2) {
+            opacity: 0;
+        }
+
+        span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+    }
+}
+
+.navbar-mobile-menu {
+    display: none;
+}
+
+.navbar-overlay {
+    display: none;
+}
+
+@media(max-width: $mobile-breakpoint) {
+    .navbar {
+        .navbar-brand {
+            img {
+                width: 16px;
+                height: 16px;
+                border-radius: $radius-sm;
+            }
+        }
+
+        .navbar-links {
+            display: none;
+        }
+
+        .navbar-right {
+            .navbar-buttons {
+                display: none;
+            }
+        }
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar-overlay {
+        display: block;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100vw;
+        height: 100vh;
+
+        background-color: rgba(0, 0, 0, 0.8);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+
+        z-index: $z3;
+
+        &.open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+    }
+
+    .navbar-mobile-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+
+        gap: $space-sm;
+
+        position: fixed;
+        top: $navbar-height;
+        right: 0;
+
+        width: 75vw;
+        height: 100vh;
+
+        padding: $space-xxl $space-lg;
+
+        background-color: $bg-color-secondary;
+        border-left: 2px solid $border-color-primary;
+
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+
+        z-index: $z4;
+
+        a {
+            display: flex;
+            align-items: center;
+
+            color: $font-color-primary;
+            font-size: $font-lg;
+            font-weight: $weight-semibold;
+
+            padding: $space-sm $space-md;
+            border-radius: $radius-md;
+
+            transition: background-color 0.15s ease, color 0.15s ease;
+
+            &:hover {
+                background-color: $bg-color-hover;
+                color: $font-color-hover;
+            }
+
+            &.active {
+                background-color: $bg-color-active;
+                color: $accent-color-active;
+            }
+        }
+
+        .navbar-buttons {
+            display: flex;
+            justify-content: center;
+
+            gap: $space-md;
+
+            margin-top: $space-lg;
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 3rem;
+                height: 3rem;
+                padding: 0;
+
+                background-color: $bg-color-primary;
+                color: $font-color-primary;
+                font-size: $font-lg;
+
+                border: 2px solid $border-color-primary;
+                border-radius: $radius-md;
+
+                transition: background-color 0.15s ease, border-color 0.15s ease;
+
+                &:hover {
+                    background-color: $bg-color-hover;
+                    border-color: $border-color-hover;
+                }
+            }
+        }
+
+        &.open {
+            transform: translateX(0%);
+        }
+    }
+}
