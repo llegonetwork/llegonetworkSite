@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <NavBar />
-      <div className="site-main-content">
+      <div className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>

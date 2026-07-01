@@ -1,0 +1,27 @@
+// SiteHeader.scss
+// css for SiteHeader.tsx
+
+@use '../index.scss' as *;
+
+.site-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    gap: $space-sm;
+    margin-bottom: $space-md;
+
+    text-align: center;
+
+    hr {
+        width: 90%;
+        height: 4px;
+        margin-top: $space-xs;
+        border-radius: $radius-lg;;
+        border: 2px solid $border-color-primary;
+        background-color: $accent-color-primary;
+    }
+}

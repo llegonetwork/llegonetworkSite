@@ -1,16 +1,18 @@
-
+import SiteHeader from "../components/SiteHeader";
+import SiteSection from "../components/SiteSection";
 
 export default function Home() {
-    // return (<>
-    //     <h1>Hello World!</h1>
-    //     <h2>Hello World!</h2>
-    //     <h3>Hello World!</h3>
-    //     <h4>Hello World!</h4>
-    //     <h5>Hello World!</h5>
-    //     <h6>Hello World!</h6>
-    //     <p>Hello World!</p>
-    //     <small>Hello World!</small>
+    return (<>
+    <SiteHeader 
+    header="llegonetwork.dev"
+    description="llegonetwork is a network of websites and bots made by Landon Lego. This website also acts as a portfolio sort of."
+    hr={true} />
 
-    //     <a>link?</a>
-    // </>)
+    <SiteSection
+    header="About Me"
+    description="llegonetwork is made by an ucpoming college freshman and includes discord bots, websites, and more! All of these projects were built on my own time for fun and not for any specific reason."
+    imageUrl="/favicon.svg"
+    />
+    
+    </>)
 }

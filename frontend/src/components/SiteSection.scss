@@ -1,0 +1,53 @@
+// SiteSection.scss
+// css for SiteSection.tsx
+
+@use '../index.scss' as *;
+
+.site-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    gap: $space-md;
+    margin: $space-md 0;
+    padding: 0 $space-md;
+
+    img {
+        aspect-ratio: 1;
+        width: 128px;
+
+        border-radius: $radius-sm;
+    }
+
+    .site-section-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        width: 100%;
+
+        hr {
+            width: 50%;
+            border: 1.5px solid $border-color-secondary;
+            border-radius: $radius-lg;
+            margin-top: $space-xs;
+            margin-bottom: $space-xs;
+        }
+    }
+
+
+}
+
+@media(max-width: $mobile-breakpoint) {
+    .site-section {
+        //flex-direction: column;
+
+        img {
+            width: 96px;
+        }
+    }
+}
