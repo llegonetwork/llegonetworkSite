@@ -16,10 +16,7 @@ import ScrollToTop from './util/ScrollToTop'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename={
-      window.location.hostname.includes("github.io")
-        ? "/llegonetworkSite" : undefined
-    }>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <NavBar />
       <div className="main-content">
