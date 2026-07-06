@@ -7,15 +7,16 @@ type SiteSectionProps = {
     header: string;
     description?: string;
     imageUrl?: string;
-    align?: 'default' | 'left' | 'center' | 'right';
+    imageIcon?: React.ReactNode;
 }
 
-export default function SiteSection({
-    header, description = undefined, imageUrl = undefined, align = 'default'
-}: SiteSectionProps) {
+export default function SiteSection({header, description = undefined, imageUrl = undefined, imageIcon = undefined}: SiteSectionProps) {
+
+    const media = imageIcon ?? (imageUrl ? <img src={imageUrl}/> : null);
+
     return(<>
     <div className="site-section">
-        {imageUrl && <img src={imageUrl} />}
+        {media && (<div className="site-section-media">{media}</div>)}
 
         <div className="site-section-info">
             <h2>{header}</h2>

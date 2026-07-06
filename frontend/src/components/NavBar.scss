@@ -49,6 +49,7 @@
             border-radius: $radius-sm;
 
             transition: transform 0.2s ease;
+            align-self: center;
         }
 
         font-size: $font-lg;
@@ -86,7 +87,7 @@
             position: relative;
 
             color: $font-color-secondary;
-            font-size: $font-lg;
+            font-size: $font-md;
             font-weight: $weight-semibold;
 
             transition: color 0.2s ease;
@@ -96,7 +97,7 @@
                 position: absolute;
 
                 left: 50%;
-                bottom: -2px;
+                bottom: -4px;
                 transform: translateX(-50%);
 
                 width: 0;

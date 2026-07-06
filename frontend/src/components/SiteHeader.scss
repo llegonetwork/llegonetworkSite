@@ -13,6 +13,7 @@
 
     gap: $space-sm;
     margin-bottom: $space-md;
+    margin-top: $space-md;
 
     text-align: center;
 
@@ -23,5 +24,10 @@
         border-radius: $radius-lg;;
         border: 2px solid $border-color-primary;
         background-color: $accent-color-primary;
+    }
+
+    a {
+        font-size: $font-sm;
+        color: $font-color-secondary;
     }
 }

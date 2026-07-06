@@ -1,0 +1,32 @@
+// SkillCard.scss
+// css for SkillCard.tsx
+
+@use '../index.scss' as *;
+
+.skill-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: $space-xs;
+
+    background-color: $bg-color-hover;
+    border: 1px solid $border-color-hover;
+    border-radius: $radius-sm;
+
+    padding: $space-xs;
+
+    svg {
+        color: $accent-color-hover;
+    }
+
+    transition: transform 0.2s ease;
+    transform: scale(1);
+
+    &:hover {
+        transform: scale(1.075);
+    }
+
+    user-select: none;
+}

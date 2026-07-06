@@ -1,0 +1,25 @@
+// containers.scss
+// useful for many containers
+
+@use '../index.scss' as *;
+
+.flex-row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-wrap-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.flex-column-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.gap {
+    gap: $space-sm;
+}

@@ -1,0 +1,37 @@
+// Footer.scss
+// css for Footer.tsx
+
+@use '../index.scss' as *;
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    background-color: $bg-color-secondary;
+    border-top: 2px solid $border-color-primary;
+
+    padding: $space-lg;
+
+    .left, .right {
+        display: flex;
+        flex-direction: column;
+        gap: $space-sm;
+    }
+
+    .left {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .right {
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    a {
+        color: $font-color-primary;
+        text-align: right;
+    }
+}

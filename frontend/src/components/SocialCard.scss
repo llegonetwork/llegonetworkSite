@@ -1,0 +1,31 @@
+// SocialCard.scss
+// css for SocialCard.tsx
+
+@use '../index.scss' as *;
+
+.social-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    gap: $space-sm;
+    border-radius: $radius-lg;
+
+    padding: $space-md;
+    margin: $space-md 0;
+
+    svg {
+        width: 32px;
+        height: 32px;
+        color: $font-color-primary;
+    }
+
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: translateY(2px);
+    }
+}

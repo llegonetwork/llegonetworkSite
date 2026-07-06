@@ -1,0 +1,51 @@
+// InfoSection.scss
+// css for InfoSection.tsx
+
+@use '../index.scss' as *;
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100%;
+    height: auto;
+
+    gap: $space-sm;
+    padding: $space-md;
+
+    .info-section-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        gap: $space-sm;
+        width: 100%;
+
+        .info-section-media {
+            height: 64px;
+            width: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img { width: 100%; height: 100%; object-fit: fill; border-radius: $radius-md; }
+            svg { width: 60%; height: 60%; color: $accent-color-primary; }
+        }
+    }
+
+    hr {
+        width: 100%;
+        height: 2px;
+        background-color: $border-color-secondary;
+        border: none;
+    }
+}
+
+.info-section-background {
+    background-color: $bg-color-secondary;
+    border: 2px solid $border-color-primary;
+    border-radius: $radius-md;
+}

@@ -3,7 +3,8 @@
 
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaGithub, FaDiscord } from "react-icons/fa";
+import { FaGithub, FaDiscord, FaEnvelope } from "react-icons/fa";
+import { IoPerson } from "react-icons/io5";
 
 import './NavBar.scss'
 
@@ -21,15 +22,17 @@ type NavButtonItem = {
 const navLinks: NavLinkItem[] = [
     { to: "/", label: "Home" },
     { to: "/projects", label: "Projects" },
+    { to: "/bots", label: "Discord Bots" },
     { to: "/socials", label: "Socials" },
 ];
 
 const navButtons: NavButtonItem[] = [
     { href: "https://github.com/llegonetwork", icon: <FaGithub />, label: "GitHub" },
-    { href: "https://discord.com", icon: <FaDiscord />, label: "Discord" },
+    { href: "https://discord.gg/ghHCxWxDMG", icon: <FaDiscord />, label: "Discord" },
+    { href: "mailto:contact@llegonetwork.dev", icon: <FaEnvelope />, label: "Email"},
+    { href: "https://landonlego.dev", icon: <IoPerson />, label: "Portfolio"},
 ];
 
-// component
 export default function NavBar() {
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -52,7 +55,10 @@ export default function NavBar() {
             <div className="navbar-right">
                 <div className="navbar-buttons">
                     {navButtons.map((btn) => (
-                        <a key={btn.href} href={btn.href} target="_blank" rel="noopener noreferrer" aria-label={btn.label}>{btn.icon}</a>
+                        <a key={btn.href} aria-label={btn.label} href={btn.href}
+                            target="_blank" rel="noopener noreferrer">
+                            {btn.icon}
+                        </a>
                     ))}
                 </div>
 
@@ -73,7 +79,10 @@ export default function NavBar() {
 
             <div className="navbar-buttons">
                 {navButtons.map((btn) => (
-                    <a key={btn.href} href={btn.href} target="_blank" rel="noopener noreferrer" aria-label={btn.label}>{btn.icon}</a>
+                    <a key={btn.href} aria-label={btn.label} href={btn.href}
+                        target="_blank" rel="noopener noreferrer">
+                        {btn.icon}
+                    </a>
                 ))}
             </div>
         </div>
