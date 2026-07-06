@@ -68,10 +68,10 @@ export default function Home() {
     <SiteSection
     header="About Me"
     description="llegonetwork is made by an upcoming college freshman and includes discord bots, websites, and more! All of these projects were built on my own time for fun and not for any specific reason."
-    imageUrl={`${import.meta.env.BASE_URL}/favicon.svg`}
+    imageUrl="/favicon.svg"
     />
 
-    {/* <InfoSection header="About Me" imageUrl={`${import.meta.env.BASE_URL}/favicon.svg`}>
+    {/* <InfoSection header="About Me" imageUrl="/favicon.svg">
         <h4>llegonetwork is made by an upcoming college freshman and includes discord bots, websites, and more! All of these projects were built on my own time for fun and not for any specific reason.</h4>
     </InfoSection> */}
 
