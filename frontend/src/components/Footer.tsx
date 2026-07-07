@@ -13,6 +13,7 @@ export default function Footer() {
     const links: FooterLink[] = [
         {name: "Terms Of Service", link: "/tos", newTab: false},
         {name: "Privacy Policy", link: "/privacy", newTab: false},
+        {name: "License", link: "https://github.com/llegonetwork/llegonetworkSite/blob/main/LICENSE", newTab: true},
         {name: "Github Repo", link: "https://github.com/llegonetwork/llegonetworkSite", newTab: true},
         {name: "Contact Us", link: "mailto:contact@llegonetwork.dev", newTab: true},
     ];

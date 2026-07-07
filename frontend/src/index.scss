@@ -174,7 +174,7 @@ h4 { font-size: $font-md;  color: $font-color-secondary; font-weight: $weight-me
 h5 { font-size: $font-sm;  color: $font-color-secondary; font-weight: $weight-medium; }
 h6 { font-size: $font-xs;  color: $font-color-secondary; font-weight: $weight-regular; }
 
-p, li, label { font-size: $font-sm; color: $font-color-secondary; font-weight: $weight-regular; }
+p, li, label { font-size: $font-md; color: $font-color-secondary; font-weight: $weight-regular; }
 
 small { font-size: $font-xs; color: color.scale($font-color-secondary, $lightness: -15%); }
 
@@ -248,7 +248,8 @@ th { color: $font-color-primary; font-weight: $weight-semibold; background: $bg-
     margin: 0 auto;
     padding: 0 $space-md;
 
-    margin-top: $navbar-height;
+    margin-top: calc($navbar-height + $space-lg);
+    margin-bottom: $space-lg;
 
     max-width: $max-width;
     min-height: 100vh;

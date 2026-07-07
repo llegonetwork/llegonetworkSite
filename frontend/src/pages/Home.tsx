@@ -1,8 +1,8 @@
 // Home.tsx
 // homepage for llegonetwork site
 
-import { FaCloud, FaCloudflare, FaCode, FaDatabase, FaKey, FaLinux, FaServer, FaToolbox, FaWindows } from "react-icons/fa";
-import { SiCplusplus, SiPython, SiJavascript, SiCss, SiHtml5, SiLua, SiTypescript, SiReact, SiNodedotjs, SiNpm, SiSass, SiGit, SiGithub, SiVite, SiFastapi, SiDiscorddotjs, SiNginx, SiIntellijidea } from "react-icons/si";
+import { FaBlender, FaCloud, FaCloudflare, FaCode, FaDatabase, FaKey, FaLinux, FaServer, FaToolbox, FaUnity, FaWindows } from "react-icons/fa";
+import { SiCplusplus, SiPython, SiJavascript, SiCss, SiHtml5, SiLua, SiTypescript, SiReact, SiNodedotjs, SiNpm, SiSass, SiGit, SiGithub, SiVite, SiFastapi, SiDiscorddotjs, SiNginx, SiIntellijidea, SiBlender, SiGnubash } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 import { BiLogoGoogleCloud, BiLogoVisualStudio } from "react-icons/bi";
 import { DiJava, DiVisualstudio } from "react-icons/di";
@@ -13,6 +13,7 @@ import InfoSection from "../components/InfoSection";
 import SkillCard from "../components/SkillCard";
 
 import '../util/containers.scss';
+import { VscTerminalPowershell } from "react-icons/vsc";
 
 type SkillItem = {
     icon: React.ReactNode;
@@ -32,22 +33,26 @@ export default function Home() {
         { icon: <SiSass />, name: "Sass" },
         { icon: <SiHtml5 />, name: "HTML" },
         { icon: <FaDatabase />, name: "SQL" },
+        { icon: < SiGnubash />, name: "Bash" },
+        { icon: < VscTerminalPowershell />, name: "Powershell" },
     ];
 
     const tools: SkillItem[] = [
         { icon: <BiLogoVisualStudio />, name: "Visual Studio Code" },
         { icon: <DiVisualstudio />, name: "Visual Studio" },
         { icon: <SiIntellijidea />, name: "IntelliJ IDEA"}, 
-        { icon: <SiReact />, name: "React" },
-        { icon: <SiNodedotjs />, name: "Node.js" },
-        { icon: <SiFastapi />, name: "FastAPI" },
-        { icon: <SiDiscorddotjs />, name: "DiscordJS" },
-        { icon: <SiNginx />, name: "Nginx" },
-        { icon: <FaKey />, name: "OAuth 2.0" },
-        { icon: <SiVite />, name: "Vite" },
-        { icon: <SiNpm />, name: "npm" },
         { icon: <SiGit />, name: "Git" },
         { icon: <SiGithub />, name: "GitHub" },
+        { icon: <SiFastapi />, name: "FastAPI" },
+        { icon: <SiReact />, name: "React" },
+        { icon: <SiVite />, name: "Vite" },
+        { icon: <SiNpm />, name: "npm" },
+        { icon: <SiNodedotjs />, name: "Node.js" },
+        { icon: <SiNginx />, name: "Nginx" },
+        { icon: <FaKey />, name: "OAuth 2.0" },
+        { icon: <SiDiscorddotjs />, name: "DiscordJS" },
+        { icon: <FaUnity />, name: "Unity" },
+        { icon: <SiBlender />, name: "Blender" },
     ];
 
     const infrastructure: SkillItem[] = [
