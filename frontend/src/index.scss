@@ -4,7 +4,7 @@
 @use "sass:color";
 
 // font family
-$font-sans: 'Inter', system-ui, sans-serif;
+$font-sans: 'Roboto', system-ui, sans-serif;
 $font-mono: 'JetBrains Mono', monospace;
 
 // background colors
@@ -107,6 +107,8 @@ $z5: 10000;
 *, *::after, *::before {
     scrollbar-width: thin;
     scrollbar-color: $bg-color-active $bg-color-secondary;
+
+    font-family: $font-sans;
 }
 
 ::-webkit-scrollbar {

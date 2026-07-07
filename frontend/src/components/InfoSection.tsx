@@ -14,7 +14,7 @@ export default function InfoSection({header, imageUrl = undefined, imageIcon = u
     const media = imageIcon ?? (imageUrl ? <img src={imageUrl}/> : null);
 
     return (<>
-    <div className={`info-section ${background && 'info-section-background'}`}>
+    <div className={`info-section ${background ? 'info-section-background' : ''}`}>
         <div className="info-section-header">
             {media && (<div className="info-section-media">{media}</div>)}
             <h2>{header}</h2>

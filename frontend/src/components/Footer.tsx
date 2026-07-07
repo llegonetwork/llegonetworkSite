@@ -9,7 +9,7 @@ type FooterLink = {
     newTab: boolean;
 }
 
-export default function() {
+export default function Footer() {
     const links: FooterLink[] = [
         {name: "Terms Of Service", link: "/tos", newTab: false},
         {name: "Privacy Policy", link: "/privacy", newTab: false},

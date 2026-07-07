@@ -40,6 +40,7 @@ export default function Socials() {
         name={item.name}
         link={item.link}
         color={item.color}
+        key={item.name}
         />
     ))}
     </>);

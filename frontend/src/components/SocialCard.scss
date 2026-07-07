@@ -12,10 +12,10 @@
     width: 100%;
 
     gap: $space-sm;
-    border-radius: $radius-lg;
+    border-radius: $radius-md;
 
     padding: $space-md;
-    margin: $space-md 0;
+    margin: $space-xs 0;
 
     svg {
         width: 32px;
@@ -23,9 +23,10 @@
         color: $font-color-primary;
     }
 
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
-        transform: translateY(2px);
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
     }
 }

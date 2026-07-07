@@ -1,7 +1,7 @@
 // Home.tsx
 // homepage for llegonetwork site
 
-import { FaCloudflare, FaCode, FaDatabase, FaKey, FaLinux, FaServer, FaWindows } from "react-icons/fa";
+import { FaCloud, FaCloudflare, FaCode, FaDatabase, FaKey, FaLinux, FaServer, FaToolbox, FaWindows } from "react-icons/fa";
 import { SiCplusplus, SiPython, SiJavascript, SiCss, SiHtml5, SiLua, SiTypescript, SiReact, SiNodedotjs, SiNpm, SiSass, SiGit, SiGithub, SiVite, SiFastapi, SiDiscorddotjs, SiNginx, SiIntellijidea } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 import { BiLogoGoogleCloud, BiLogoVisualStudio } from "react-icons/bi";
@@ -67,7 +67,7 @@ export default function Home() {
 
     <SiteSection
     header="About Me"
-    description="llegonetwork is made by an upcoming college freshman and includes discord bots, websites, and more! All of these projects were built on my own time for fun and not for any specific reason."
+    description="llegonetwork is made by an upcoming college freshman and includes discord bots, websites, and more! All of these projects were built on my own time for fun and not for any specific reason. Below I have listed some of my skills."
     imageUrl="/favicon.svg"
     />
 
@@ -75,14 +75,16 @@ export default function Home() {
         <h4>llegonetwork is made by an upcoming college freshman and includes discord bots, websites, and more! All of these projects were built on my own time for fun and not for any specific reason.</h4>
     </InfoSection> */}
 
-    <InfoSection header="My Skills" imageIcon={<FaCode />} background={false}>
-        <h3>Programming Languages</h3>
-        <div className="flex-wrap-container gap">{languages.map((item: SkillItem) => (<SkillCard name={item.name} imageIcon={item.icon} />))}</div>
-        <h3>Tools / Platforms</h3>
-        <div className="flex-wrap-container gap">{tools.map((item: SkillItem) => (<SkillCard name={item.name} imageIcon={item.icon} />))}</div>
-        <h3>Infrastructure</h3>
-        <div className="flex-wrap-container gap">{infrastructure.map((item: SkillItem) => (<SkillCard name={item.name} imageIcon={item.icon} />))}</div>
+    <InfoSection header="Programming Languages" imageIcon={<FaCode />} background={false}>
+        <div className="flex-wrap-container gap">{languages.map((item: SkillItem) => (<SkillCard name={item.name} imageIcon={item.icon} key={item.name}/>))}</div>
     </InfoSection>
 
+    <InfoSection header="Tools / Platforms" imageIcon={<FaToolbox />} background={false}>
+        <div className="flex-wrap-container gap">{tools.map((item: SkillItem) => (<SkillCard name={item.name} imageIcon={item.icon} key={item.name} />))}</div>
+    </InfoSection>
+
+    <InfoSection header="Infrastructure" imageIcon={<FaCloud />} background={false}>
+        <div className="flex-wrap-container gap">{infrastructure.map((item: SkillItem) => (<SkillCard name={item.name} imageIcon={item.icon} key={item.name} />))}</div>
+    </InfoSection>
     </>)
 }

@@ -21,11 +21,11 @@
         color: $accent-color-hover;
     }
 
-    transition: transform 0.2s ease;
-    transform: scale(1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
         transform: scale(1.075);
+        box-shadow: $shadow-sm;
     }
 
     user-select: none;

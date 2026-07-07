@@ -40,8 +40,8 @@ export default function NavBar() {
         <nav className="navbar">
             <div className="navbar-left">
                 <a className="navbar-brand" href="/">
-                    <img src="/favicon.svg" />
-                    llegonetwork 
+                    <img src="/favicon.svg" alt="logo"/>
+                    llegonetwork
                     <small>.dev</small>
                 </a>
 

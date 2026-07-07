@@ -30,7 +30,7 @@ export default function SiteHeader({header, description = undefined, hr = true, 
 
     return (
         <div className="site-header" style={{ alignItems, textAlign }}>
-            {(backLink && backLabel) && <a href={backLink}>{"<- " + backLabel}</a>}
+            {(backLink && backLabel) && <a href={backLink}>{"← " + backLabel}</a>}
             <h2>{header}</h2>
             {description && <h4>{description}</h4>}
             {hr && <hr />}

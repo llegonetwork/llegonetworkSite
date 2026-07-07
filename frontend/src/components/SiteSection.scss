@@ -42,16 +42,6 @@
             margin-bottom: $space-xs;
         }
     }
-
-    .left {
-        align-items: flex-start;
-        text-align: start;
-    }
-
-    .right {
-        align-items: flex-end;
-        text-align: end;
-    }
 }
 
 @media(max-width: $mobile-breakpoint) {
