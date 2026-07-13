@@ -1,7 +1,7 @@
 // Home.tsx
 // homepage for llegonetwork site
 
-import { FaBlender, FaCloud, FaCloudflare, FaCode, FaDatabase, FaKey, FaLinux, FaServer, FaToolbox, FaUnity, FaWindows } from "react-icons/fa";
+import { FaBriefcase, FaCertificate, FaCloud, FaCloudflare, FaCode, FaDatabase, FaKey, FaLinux, FaProjectDiagram, FaSchool, FaServer, FaToolbox, FaUnity, FaUniversity, FaUserTie, FaWindows, FaWrench } from "react-icons/fa";
 import { SiCplusplus, SiPython, SiJavascript, SiCss, SiHtml5, SiLua, SiTypescript, SiReact, SiNodedotjs, SiNpm, SiSass, SiGit, SiGithub, SiVite, SiFastapi, SiDiscorddotjs, SiNginx, SiIntellijidea, SiBlender, SiGnubash } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 import { BiLogoGoogleCloud, BiLogoVisualStudio } from "react-icons/bi";
@@ -72,24 +72,51 @@ export default function Home() {
 
     <SiteSection
     header="About Me"
-    description="llegonetwork is made by an upcoming college freshman and includes discord bots, websites, and more! All of these projects were built on my own time for fun and not for any specific reason. Below I have listed some of my skills."
+    description="llegonetwork is made by an upcoming college freshman and includes discord bots, websites, and more! All of these projects were built on my own time for fun and not for any specific reason. Below I have some more about me."
     imageUrl="/favicon.svg"
+    linkTo="/socials"
+    linkLabel="My Socials"
     />
 
     {/* <InfoSection header="About Me" imageUrl="/favicon.svg">
         <h4>llegonetwork is made by an upcoming college freshman and includes discord bots, websites, and more! All of these projects were built on my own time for fun and not for any specific reason.</h4>
     </InfoSection> */}
 
-    <InfoSection header="Programming Languages" imageIcon={<FaCode />} background={false}>
-        <div className="flex-wrap-container gap">{languages.map((item: SkillItem) => (<SkillCard name={item.name} imageIcon={item.icon} key={item.name}/>))}</div>
+    <InfoSection header="My Skills" imageIcon={<FaWrench />} background={false} size="lg" border={true}>
+
+        <InfoSection header="Programming Languages" imageIcon={<FaCode />} background={false} size="sm">
+            <div className="flex-wrap-container gap">{languages.map((item: SkillItem) => (<SkillCard name={item.name} imageIcon={item.icon} key={item.name}/>))}</div>
+        </InfoSection>
+
+        <InfoSection header="Tools / Platforms" imageIcon={<FaToolbox />} background={false} size="sm">
+            <div className="flex-wrap-container gap">{tools.map((item: SkillItem) => (<SkillCard name={item.name} imageIcon={item.icon} key={item.name} />))}</div>
+        </InfoSection>
+
+        <InfoSection header="Infrastructure" imageIcon={<FaCloud />} background={false} size="sm">
+            <div className="flex-wrap-container gap">{infrastructure.map((item: SkillItem) => (<SkillCard name={item.name} imageIcon={item.icon} key={item.name} />))}</div>
+        </InfoSection>
+
     </InfoSection>
 
-    <InfoSection header="Tools / Platforms" imageIcon={<FaToolbox />} background={false}>
-        <div className="flex-wrap-container gap">{tools.map((item: SkillItem) => (<SkillCard name={item.name} imageIcon={item.icon} key={item.name} />))}</div>
+    <InfoSection header="My Experience" imageIcon={<FaUserTie />} background={false} size="lg" border={true}>
+
+        <InfoSection header="High School" imageIcon={<FaSchool />} background={false} size="sm">
+            <h4>I spent three years in a secondary vocational programming program, where I learned Visual Basic, C#, Java, and SQL, along with the core fundamentals of programming. In high school, I took computer science classes in two separate years, focusing on Python and Java. Before that, in middle school, I took an introductory course in Scratch, which taught me many of the fundamentals I'd build on later. Beyond the classroom, most of my growth as a programmer came from working on my own projects as a hobby throughout high school.</h4>
+        </InfoSection>
+
+        <InfoSection header="College" imageIcon={<FaUniversity />} background={false} size="sm">
+            <h4>As I write this, I'm an upcoming college freshman about to study Software Development, and I'm excited to see what I'll learn.</h4>
+        </InfoSection>
+
+        <InfoSection header="Certifications" imageIcon={<FaCertificate />} background={false} size="sm">
+            <small>I needa figure this out eventually....</small>
+        </InfoSection>
+
     </InfoSection>
 
-    <InfoSection header="Infrastructure" imageIcon={<FaCloud />} background={false}>
-        <div className="flex-wrap-container gap">{infrastructure.map((item: SkillItem) => (<SkillCard name={item.name} imageIcon={item.icon} key={item.name} />))}</div>
+    <InfoSection header="Featured Projects" imageIcon={<FaProjectDiagram />} background={false} size="lg" border={true}>
+        <small>I needa finish projects and bots page to do this so oeauhdiaushdiuah</small>
     </InfoSection>
+
     </>)
 }

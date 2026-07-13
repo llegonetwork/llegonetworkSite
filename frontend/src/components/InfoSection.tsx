@@ -8,19 +8,26 @@ type InfoSectionProps = PropsWithChildren<{
     imageUrl?: string;
     imageIcon?: React.ReactNode;
     background?: boolean;
+    size?: 'sm' | 'lg';
+    border?: boolean;
 }>;
 
-export default function InfoSection({header, imageUrl = undefined, imageIcon = undefined, background = true, children}: InfoSectionProps) {
+export default function InfoSection({header, imageUrl = undefined, imageIcon = undefined, background = true, size = 'lg', border = false, children}: InfoSectionProps) {
     const media = imageIcon ?? (imageUrl ? <img src={imageUrl}/> : null);
 
     return (<>
     <div className={`info-section ${background ? 'info-section-background' : ''}`}>
         <div className="info-section-header">
             {media && (<div className="info-section-media">{media}</div>)}
-            <h2>{header}</h2>
+            {size === "lg" ? <h2>{header}</h2> : <h3>{header}</h3>}
         </div>
 
-        <hr /> {children}
+        {size === "lg" && <hr />}
+        {/* <hr /> */}
+        
+        <div className={border ? 'info-section-border' : ''}>
+            {children}
+        </div>
     </div>
     </>)
 }

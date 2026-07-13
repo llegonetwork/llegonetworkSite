@@ -17,12 +17,20 @@
 
     text-align: center;
 
+    h1 {
+        background: linear-gradient(135deg, $accent-color-primary, $accent-color-secondary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 800;
+    }
+
     hr {
         width: 90%;
         height: 4px;
         margin-top: $space-xs;
         border-radius: $radius-lg;;
-        border: 2px solid $border-color-primary;
+        border: 2px solid $accent-color-primary;
         background-color: $accent-color-primary;
     }
 
