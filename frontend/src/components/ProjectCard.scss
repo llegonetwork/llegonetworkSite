@@ -1,0 +1,100 @@
+// ProjectCard.scss
+// css for ProjectCard.tsx
+
+@use '../index.scss' as *;
+
+.project-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: $space-lg;
+
+    width: 100%;
+
+    background-color: $bg-color-secondary;
+    border: 2px solid $border-color-secondary;
+    
+    border-radius: $radius-md;
+
+    padding: $space-md;
+    margin-top: $space-sm;
+
+    transition: border-color 0.2s ease, transform 0.2s ease, filter 0.2s ease;
+
+    &:hover {
+        border-color: $border-color-hover;
+        filter: brightness(105%);
+        transform: translateY(-2px);
+    }
+
+    img {
+        width: 96px;
+        height: 96px;
+        object-fit: cover;
+    }
+
+    .project-card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        gap: $space-xs;
+
+        border-left: 2px solid $border-color-secondary;
+        padding-left: $space-md;
+
+        .project-card-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            gap: $space-md;
+
+            a {
+                background-color: $bg-color-secondary;
+                border: 2px solid $border-color-secondary;
+                color: $font-color-primary;
+
+                padding: $space-sm;
+
+                border-radius: $radius-md;
+
+                transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+
+                &:hover {
+                    border-color: $border-color-hover;
+                    color: $font-color-hover;
+                    background-color: $bg-color-hover;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-breakpoint) {
+    .project-card {
+        flex-direction: column;
+
+        .project-card-content {
+            border-left: none;
+            border-top: 2px solid $border-color-secondary;
+
+            padding-left: none;
+            padding-top: $space-md;
+
+            .project-card-header {
+                justify-content: space-between;
+                gap: $space-xs;
+
+                a {
+                    padding: $space-xs;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

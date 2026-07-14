@@ -10,9 +10,11 @@ type InfoSectionProps = PropsWithChildren<{
     background?: boolean;
     size?: 'sm' | 'lg';
     border?: boolean;
+    linkTo?: string;
+    linkLabel?: string;
 }>;
 
-export default function InfoSection({header, imageUrl = undefined, imageIcon = undefined, background = true, size = 'lg', border = false, children}: InfoSectionProps) {
+export default function InfoSection({header, imageUrl = undefined, imageIcon = undefined, background = true, size = 'lg', border = false, linkTo = undefined, linkLabel = undefined, children}: InfoSectionProps) {
     const media = imageIcon ?? (imageUrl ? <img src={imageUrl}/> : null);
 
     return (<>
@@ -20,6 +22,7 @@ export default function InfoSection({header, imageUrl = undefined, imageIcon = u
         <div className="info-section-header">
             {media && (<div className="info-section-media">{media}</div>)}
             {size === "lg" ? <h2>{header}</h2> : <h3>{header}</h3>}
+            {(linkTo && linkLabel) && (<a href={linkTo}>{linkLabel}</a>)}
         </div>
 
         {size === "lg" && <hr />}

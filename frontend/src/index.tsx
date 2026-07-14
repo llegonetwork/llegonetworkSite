@@ -17,6 +17,8 @@ import ScrollToTop from './util/ScrollToTop'
 
 import termsContent from "./assets/terms.md?raw";
 import privacyContent from "./assets/privacy.md?raw";
+import Projects from './pages/Projects'
+import Bots from './pages/Bots'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -27,6 +29,8 @@ createRoot(document.getElementById('root')!).render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/socials" element={<Socials />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/bots" element={<Bots />} />
 
           <Route path="/tos" element={<ReactMarkdown>{termsContent}</ReactMarkdown>} />
           <Route path="privacy" element={<ReactMarkdown>{privacyContent}</ReactMarkdown>} />
